@@ -8,10 +8,6 @@
 #include <cstdint>
 #include <memory>
 
-// Um formato simples de serialização "manual" (padrão):
-// [bytes_obj(int32)] [tipo_len(uint8)] [tipo chars] [id(int32)] [nome_len(int32)] [nome chars] [salario(double)]
-// Em subclasses, podem vir campos extras (por exemplo comissão) — para simplificar, incluiremos um campo extra string/json opcional.
-
 // Funções para enviar/receber todos os bytes (usadas com sockets)
 ssize_t send_all(int sockfd, const void *buf, size_t len);
 ssize_t recv_all(int sockfd, void *buf, size_t len);
