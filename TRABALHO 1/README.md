@@ -1,11 +1,8 @@
-# Sistema de Gestão de Supermercado  
-
-### Disciplina: Sistemas Distribuídos  
+# Sistema de Gestão de Supermercado   
 
 **Universidade Federal do Ceará – Campus de Quixadá**  
-**Professor:** Rafael Braga  
-**Linguagem:** C++  
 **Tema:** Comunicação entre processos  
+**Linguagem:** C++  
 
 ---
 
