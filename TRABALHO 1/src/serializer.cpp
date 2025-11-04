@@ -9,6 +9,7 @@
 
 using namespace std;
 
+// Funções auxiliares de leitura/escrita de inteiros em streams
 static void write_int32_to_stream(ostream &os, int32_t v) {
     os.write(reinterpret_cast<const char*>(&v), sizeof(v));
 }
@@ -17,6 +18,7 @@ static bool read_int32_from_stream(istream &is, int32_t &v) {
     return (bool)is;
 }
 
+// Funções auxiliares para enviar/receber todos os bytes via socket
 ssize_t send_all(int sockfd, const void *buf, size_t len) {
     size_t total = 0;
     const char *p = (const char*)buf;
@@ -38,7 +40,7 @@ ssize_t recv_all(int sockfd, void *buf, size_t len) {
     return total;
 }
 
-// HELPER: pack single Funcionario into a binary buffer (vector<char>)
+// Empacotamento (serialização) de um objeto Funcionario
 static std::vector<char> packFuncionario(const Funcionario &f) {
     std::ostringstream os(std::ios::binary);
     // tipo (string)
@@ -86,6 +88,7 @@ static std::vector<char> packFuncionario(const Funcionario &f) {
     return std::vector<char>(str.begin(), str.end());
 }
 
+// Desempacotamento (desserialização)
 static std::shared_ptr<Funcionario> unpackFuncionario(const std::vector<char> &buf) {
     std::istringstream is(std::string(buf.data(), buf.size()), std::ios::binary);
     uint8_t tipo_len;
@@ -109,7 +112,7 @@ static std::shared_ptr<Funcionario> unpackFuncionario(const std::vector<char> &b
     std::string extras(extras_len, '\0');
     if (extras_len > 0) is.read(&extras[0], extras_len);
 
-    // Criar objeto correto
+    // Criação do objeto correto com base no tipo
     if (tipo == "Vendedor") {
         double comissao = 0.0;
         if (!extras.empty()) {
@@ -143,7 +146,8 @@ static std::shared_ptr<Funcionario> unpackFuncionario(const std::vector<char> &b
     }
 }
 
-// stream (file/stdout)
+//Escrita e leitura em streams (ex: arquivo binário)
+// Grava a lista de funcionários em um arquivo ou fluxo binário
 void Serializer::writeToStream(const vector<shared_ptr<Funcionario>>& list, ostream &os) {
     int32_t n = (int32_t)list.size();
     os.write(reinterpret_cast<const char*>(&n), sizeof(n));
@@ -155,6 +159,7 @@ void Serializer::writeToStream(const vector<shared_ptr<Funcionario>>& list, ostr
     }
 }
 
+// Lê a lista de funcionários de um arquivo binário
 vector<shared_ptr<Funcionario>> Serializer::readFromStream(istream &is) {
     vector<shared_ptr<Funcionario>> res;
     int32_t n;
@@ -169,7 +174,7 @@ vector<shared_ptr<Funcionario>> Serializer::readFromStream(istream &is) {
     return res;
 }
 
-// socket
+// Escrita e leitura via SOCKET TCP
 bool Serializer::writeToSocket(int sockfd, const vector<shared_ptr<Funcionario>>& list) {
     int32_t n = (int32_t)list.size();
     int32_t n_net = htonl(n);
