@@ -18,8 +18,4 @@ O objetivo é simular o gerenciamento básico de um supermercado em **C++**, uti
 - **Mônica Maria Rodrigues**  
 - **Maryana Moraes**
 
----
-
-### Licença
-
-Este projeto foi desenvolvido para fins acadêmicos na disciplina Sistemas Distribuídos da UFC - Campus Quixadá.
+**OBS:** Este projeto foi desenvolvido para fins acadêmicos na disciplina **Sistemas Distribuídos da UFC - Campus Quixadá.**
