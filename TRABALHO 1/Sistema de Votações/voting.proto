@@ -1,0 +1,48 @@
+syntax = "proto3";
+package voting;
+
+// Login
+message LoginRequest {
+  string voterId = 1;
+  string password = 2;
+}
+message LoginReply {
+  bool ok = 1;
+  string message = 2;
+  repeated Candidate candidates = 3;
+}
+
+// Candidate representation
+message Candidate {
+  int32 id = 1;
+  string name = 2;
+  string party = 3;
+}
+
+// Vote
+message VoteRequest {
+  string voterId = 1;
+  int32 candidateId = 2;
+}
+message VoteReply {
+  bool accepted = 1;
+  string message = 2;
+}
+
+// Admin multicast notice (UDP)
+message AdminNotice {
+  string title = 1;
+  string body = 2;
+  int64 timestamp = 3;
+}
+
+// Final results
+message Results {
+  repeated CandidateResult results = 1;
+  int32 totalVotes = 2;
+}
+message CandidateResult {
+  Candidate candidate = 1;
+  int32 votes = 2;
+  double percent = 3;
+}
