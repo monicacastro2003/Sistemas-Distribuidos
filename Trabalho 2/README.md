@@ -9,3 +9,9 @@ A aplicação contém:
 - Passagem de parâmetros por referência (para objetos remotos) e por valor (para objetos locais), usando representação externa como JSON/XML/Protocol Buffers.
 
 O cliente chama métodos como se estivessem locais, mas a execução ocorre no servidor através do RMI.
+
+
+### 🎥 Vídeo explicativo
+[Assista ao vídeo no Google Drive](https://drive.google.com/file/d/1gc1p96SjnSP8nJgridQfGm3jmQApKPgJ/view?usp=drivesdk)
+
+obs: Contém dois vídeos juntos. Um explicando o Trabalho 2 e um mais curto falando sobre o Sistema de Votação do Trabalho 1.
