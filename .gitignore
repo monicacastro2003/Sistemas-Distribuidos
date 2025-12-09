@@ -1,0 +1,32 @@
+# Build directories
+build/
+*/build/
+lab-calculadora-cpp/build/
+
+# Compiled files
+*.o
+*.a
+*.so
+*.exe
+
+# Executáveis
+calculadora_server
+
+# IDE files
+.vscode/
+*.code-workspace
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Vcpkg
+vcpkg/
