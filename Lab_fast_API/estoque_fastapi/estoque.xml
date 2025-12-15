@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<estoque><aparelho><id>0</id><nome>string</nome><marca>string</marca><preco>0.0</preco><categoria>string</categoria><deposito>string</deposito></aparelho><aparelho><id>1</id><nome>Lab FasAPI</nome><marca>UFC</marca><preco>50.0</preco><categoria>Laboratórios</categoria><deposito>Quixadá</deposito></aparelho></estoque>
