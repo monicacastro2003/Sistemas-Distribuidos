@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread CMakeFiles/servidor_http.dir/servidor_http.cpp.o CMakeFiles/servidor_http.dir/funcionario.cpp.o CMakeFiles/servidor_http.dir/subclasses.cpp.o CMakeFiles/servidor_http.dir/serializer.cpp.o -o servidor_http  -lpthread 

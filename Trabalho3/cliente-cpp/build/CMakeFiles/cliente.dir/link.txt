@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/cliente.dir/cliente.cpp.o -o cliente  /usr/lib/x86_64-linux-gnu/libcurl.so 

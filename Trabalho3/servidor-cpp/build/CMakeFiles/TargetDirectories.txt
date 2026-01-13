@@ -1,0 +1,3 @@
+/home/maryana-moraes/Documentos/UFC/8_Semestre/Sistemas Distribuídos/atividades/trabalhos/Sistemas-Distribuidos/Trabalho3/servidor-cpp/build/CMakeFiles/servidor_http.dir
+/home/maryana-moraes/Documentos/UFC/8_Semestre/Sistemas Distribuídos/atividades/trabalhos/Sistemas-Distribuidos/Trabalho3/servidor-cpp/build/CMakeFiles/edit_cache.dir
+/home/maryana-moraes/Documentos/UFC/8_Semestre/Sistemas Distribuídos/atividades/trabalhos/Sistemas-Distribuidos/Trabalho3/servidor-cpp/build/CMakeFiles/rebuild_cache.dir
